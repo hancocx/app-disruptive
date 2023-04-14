@@ -17,4 +17,16 @@ conexion.connect(function (error) {
   }
 });
 
+// Prueba de consulta
+/*conexion.query(
+  'SELECT `alias`, `rol`, `email`, `created_at` FROM `user`',
+  function (error, results, fields) {
+    if (error) throw error;
+
+    results.forEach((result) => {
+      console.log(result);
+    });
+  }
+);*/
+
 conexion.end();
