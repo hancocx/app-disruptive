@@ -1,7 +1,7 @@
 {
   "name": "disruptive-examen",
   "version": "1.0.0",
-  "description": "",
+  "description": "Esta es un aplicación relacionada a una prueba técnica.",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir build",
@@ -9,7 +9,7 @@
     "start": "node build/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ricardo Zarate Cruz",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
