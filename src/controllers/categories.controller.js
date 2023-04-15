@@ -1,5 +1,7 @@
 // Crear categorias
-export const createCategory = (req, res) => {};
+export const createCategory = (req, res) => {
+  res.json('Category created');
+};
 
 // Obtener todas las categorias
 export const getCategories = (req, res) => {
