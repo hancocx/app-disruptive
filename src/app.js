@@ -5,12 +5,20 @@ import pkg from '../package.json';
 // Importar rutas
 import categoriesRoutes from './routes/categories.routes';
 
+// Inicialización
 const app = express();
+
+// Settings
+app.set('port', process.env.PORT || 3000);
 
 app.set('pkg', pkg);
 
+// Middlewares
 app.use(morgan('dev'));
 
+// Variables globales
+
+// Rutas
 app.get('/', (req, res) => {
   res.json({
     name: app.get('pkg').name,
@@ -21,5 +29,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/categories', categoriesRoutes);
+
+// Public
 
 export default app;

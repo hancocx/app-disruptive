@@ -1,0 +1,21 @@
+Nodejs y Mysql, Aplicación Completa (Login, Registro, CRUD, ES6+ y Más )
+https://www.youtube.com/watch?v=qJ5R9WTW0_E
+
+Nodejs REST API con JWT y Roles (Autorización y Autenticación) & Mongodb
+https://www.youtube.com/watch?v=lV7mxivGX_I
+
+How to Create MySQL Connection with Node JS using Sequelize and Express
+https://www.turing.com/kb/mysql-connection-with-node-js-using-sequelize-and-express
+
+Node JS, Express y MySQL con Sequelize
+https://tomasmalio.medium.com/node-js-express-y-mysql-con-sequelize-ec0a7c0ae292
+
+Nodejs MYSQL Login Tutorial - Part 1/7
+https://www.youtube.com/watch?v=VavWEtI5T7c&list=PLD9SRxG6ST3GBsczn8OUKLaErhrvOz9zQ
+
+https://webkul.com/blog/prestashop-controller-lifecycle/
+
+Modelo entidad relación de un sistema de blog
+https://www.programaenlinea.net/modelo-base-datos-sistema-blog/
+https://github.com/evilnapsis/blogelin/blob/master/schema.sql
+https://i0.wp.com/evilnapsis.com/wp-content/uploads/2019/03/blogelin2.png

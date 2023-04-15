@@ -1,0 +1,74 @@
+USE db_disruptive;
+
+
+CREATE TABLE `user` (
+
+`user_id` int(11) NOT NULL AUTO_INCREMENT,
+
+`alias` varchar(50) NOT NULL,
+
+`rol` varchar(50) NOT NULL,
+
+`email` varchar(50) NOT NULL,
+
+`password` varchar(60) NOT NULL,
+
+`created_at` datetime NOT NULL DEFAULT current_timestamp(),
+
+`updated_at` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+
+PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='Tabla para guardar los usuarios que publicaran los aportes.'
+
+CREATE TABLE `privilege`(
+
+`privilege_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+`name` VARCHAR(50),
+
+`id_user` INT NOT NULL,
+
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+FOREIGN KEY (id_user) REFERENCES user(user_id)
+);
+
+CREATE TABLE `post`(
+
+`post_id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+
+`title` VARCHAR(50),
+
+`subject` VARCHAR(50),
+
+`content` TEXT,
+
+`image` VARCHAR(255),
+
+`url_yt` VARCHAR(255),
+
+`id_category` INT NOT NULL,
+
+`id_user` INT NOT NULL,
+
+`status` INT DEFAULT 1,
+
+`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+FOREIGN KEY (id_category) REFERENCES category(category_id),
+
+FOREIGN KEY (id_user) REFERENCES user(user_id)
+);
+
+/**
+
+* password: encrypted using sha1(md5("mypassword"))
+
+* status: 1. active, 2. inactive, 3. other, ...
+
+* kind: 1. root, 2. other, ...
+
+**/
+INSERT INTO user (alias,rol,email,password,created_at,updated_at) VALUES('rich_3012','Admin','ricardozc.contacto@gmail.com',sha1(md5("admin123")),NOW(),NOW())
