@@ -4,10 +4,14 @@ const express = require('express');
 const router = express.Router();
 const model = require('../models/user.model');
 
+/**
+ * El método get muestra la página de inicio de sesión o, s
+ * si el usuario está autenticado, redirige a la página de perfil.
+ */
 router.get('/', function (request, response) {
   if (request.isAuthenticated()) {
     if (request.user.type === 'Admin') {
-      response.redirect('/Aprofile/admin');
+      response.redirect('/profile/admin');
     } else if (request.user.type === 'Creador') {
       response.redirect('/profile/creator');
     } else if (request.user.type === 'Lector') {
@@ -18,6 +22,11 @@ router.get('/', function (request, response) {
   }
 });
 
+/**
+ * El método post comprueba si las credenciales son
+ * válidas y si lo son inicia la sesión del usuario
+ * a través de request.login(user).
+ */
 router.post('/', async function (request, response) {
   areValid = await model.areValidCredentials(
     request.body.username,
@@ -37,11 +46,15 @@ router.post('/', async function (request, response) {
     }
   } else {
     response.render('login', {
-      errors: [{ msg: 'Invalid credentials provided' }],
+      errors: [{ msg: 'Invalid credentials provided!' }],
     });
   }
 });
 
+/**
+ * Incluimos aquí la ruta que permite el cierre de sesión.
+ * Llamamos a request.logOut().
+ */
 router.post('/logout', function (request, response) {
   request.logOut();
   response.redirect('/login');
