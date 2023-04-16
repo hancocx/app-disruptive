@@ -1,24 +1,39 @@
 {
   "name": "disruptive-examen",
   "version": "1.0.0",
-  "description": "",
+  "description": "Esta es una prueba técnica.",
   "main": "index.js",
   "scripts": {
     "build": "babel src --out-dir build",
-    "dev": "nodemon src/index.js --exec babel-node",
+    "dev": "nodemon index.js --exec babel-node",
     "start": "node build/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ricardo Zarate Cruz",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "express-myconnection": "^1.0.4",
+    "express-mysql": "^0.0.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
     "helmet": "^6.1.5",
     "jsonwebtoken": "^9.0.0",
-    "morgan": "^1.10.0"
+    "mariadb": "^3.1.1",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.2.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.31.0",
+    "timeago.js": "^4.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
